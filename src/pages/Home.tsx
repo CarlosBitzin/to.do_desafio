@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { Header } from '../components/Header';
+import { ItemWrapper } from '../components/ItemWrapper';
 import { Task, TasksList } from '../components/TasksList';
 import { TodoInput } from '../components/TodoInput';
 
@@ -23,7 +24,9 @@ export function Home() {
   }
 
   function handleRemoveTask(id: number) {
-    //TODO - remove task from state
+    const removeTask = tasks.filter(task => task.id != id)
+
+    setTasks(removeTask)
   }
 
   return (
